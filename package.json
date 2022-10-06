@@ -1,19 +1,19 @@
 {
   "name": "escpos-buffer",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "Library to generate buffer for thermal printers.",
-  "author": "GrandChef Team <desenvolvimento@grandchef.com.br>",
+  "author": "Linvix Sistemas Team <desenvolvimento@grandchef.com.br>",
   "license": "MIT",
   "engines": {
     "node": ">= 10"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/grandchef/escpos-buffer.git"
+    "url": "git+ssh://git@github.com/linvix-sistemas/react-native-escpos-buffer.git"
   },
-  "homepage": "https://github.com/grandchef/escpos-buffer#readme",
+  "homepage": "https://github.com/linvix-sistemas/react-native-escpos-buffer#readme",
   "bugs": {
-    "url": "https://github.com/grandchef/escpos-buffer/issues"
+    "url": "https://github.com/linvix-sistemas/react-native-escpos-buffer/issues"
   },
   "main": "dist/index.js",
   "scripts": {

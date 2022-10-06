@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 import { Connection } from '../connection';
 import { Font, Capability, CodePage } from '../capabilities';
 import { Align, Style, Cut, Drawer } from '../actions';

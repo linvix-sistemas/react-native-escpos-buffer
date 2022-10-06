@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 import { Align, Style, Cut, Drawer } from '../actions';
 import { Profile } from '.';
 import { Font } from '../capabilities';

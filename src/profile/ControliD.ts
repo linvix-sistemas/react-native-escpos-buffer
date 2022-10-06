@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 import Epson from './Epson';
 import { Style } from '../actions';
 import { Font } from '../capabilities';

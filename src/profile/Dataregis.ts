@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 import Elgin from './Elgin';
 
 export default class Dataregis extends Elgin {

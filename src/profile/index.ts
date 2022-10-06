@@ -3,8 +3,6 @@ import { Font, Capability, CodePage } from '../capabilities';
 import { Align, Style, Cut, Drawer } from '../actions';
 import * as iconv from 'iconv-lite';
 import * as QRCode from 'qrcode';
-import Image from '../graphics/Image';
-import { Threshold } from '../graphics/filter';
 
 export type StyleConf = {
   width?: number;
@@ -123,25 +121,10 @@ export abstract class Profile {
     return '\x1B*!';
   }
 
-  async draw(image: Image): Promise<void> {
-    const low = String.fromCharCode(image.width & 0xff);
-    const high = String.fromCharCode((image.width >> 8) & 0xff);
-    await this.connection.write(Buffer.from('\x1B3\x10', 'ascii'));
-    for (let y = 0; y < image.lines; y++) {
-      const data = image.lineData(y);
-      await this.connection.write(
-        Buffer.from(this.bitmapCmd + low + high, 'ascii'),
-      );
-      await this.connection.write(data);
-      await this.connection.write(Buffer.from('\x1BJ\x00', 'ascii'));
-    }
-    return this.connection.write(Buffer.from('\x1B2', 'ascii'));
-  }
-
   protected async drawQrcode(data: string, size: number): Promise<void> {
-    const buffer = await QRCode.toBuffer(data, { scale: size });
-    const image = new Image(buffer, new Threshold());
-    return this.draw(image);
+    // const buffer = await QRCode.toBuffer(data, { scale: size });
+    // const image = new Image(buffer, new Threshold());
+    // return this.draw(image);
   }
 
   get connection(): Connection {
@@ -204,7 +187,7 @@ export abstract class Profile {
     return this.connection.write(Buffer.from(this._codepage.command, 'ascii'));
   }
 
-  protected async fontChanged(_: Font, __: Font) {}
+  protected async fontChanged(_: Font, __: Font) { }
 
   async initialize(): Promise<void> {
     await this.setCodepage(this.capabilities.codepage);

@@ -1,6 +1,5 @@
 import Model from './Model';
 import { Connection } from './connection';
-import Image from './graphics/Image';
 import { StyleConf } from './profile';
 import { Cut, Drawer, Align } from './actions';
 import { SupportedModel } from './capabilities';
@@ -35,10 +34,6 @@ export default class Printer {
     off_time: number = 240,
   ) {
     return this.model.profile.drawer(number, on_time, off_time);
-  }
-
-  async draw(image: Image): Promise<void> {
-    return this.model.profile.draw(image);
   }
 
   async qrcode(data: string, size: number = null): Promise<void> {

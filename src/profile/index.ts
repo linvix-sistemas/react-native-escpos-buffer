@@ -2,7 +2,6 @@ import { Connection } from '../connection';
 import { Font, Capability, CodePage } from '../capabilities';
 import { Align, Style, Cut, Drawer } from '../actions';
 import * as iconv from 'iconv-lite';
-import * as QRCode from 'qrcode';
 
 export type StyleConf = {
   width?: number;

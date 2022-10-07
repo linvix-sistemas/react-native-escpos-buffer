@@ -62,7 +62,26 @@ export default class Sunmi extends Profile {
   }
 
   protected async setMode(mode: number, enable: boolean): Promise<void> {
-    //
+    let byte = 0b00000000; // keep Font A selected
+    if (this.font.name == 'Font B') {
+      byte |= 0b00000001; // keep Font B selected
+    }
+    const before = byte;
+    if (Style.DoubleHeight & mode) {
+      byte |= 0b00010000;
+    }
+    if (Style.DoubleWidth & mode) {
+      byte |= 0b00100000;
+    }
+    let mask = 0b00000001;
+    if (enable) {
+      mask = 0b00110001;
+    }
+    if (before != byte) {
+      return this.connection.write(
+        Buffer.from('\x1B!' + String.fromCharCode(byte & mask), 'ascii'),
+      );
+    }
   }
 
   protected async setStyle(style: Style, enable: boolean): Promise<void> {

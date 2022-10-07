@@ -48,6 +48,12 @@ const capabilities = {
       profile: 'bematech',
     },
 
+    // Sunmi
+    {
+      model: 'Sunmi-Generic',
+      profile: 'sunmi',
+    },
+
     // Epson
     {
       model: 'TM-T20',
@@ -267,6 +273,25 @@ const capabilities = {
         cp866: '\x1Bt\x11',
         cp852: '\x1Bt\x12',
         cp858: '\x1Bt\x13',
+      },
+    },
+    sunmi: {
+      brand: 'Sunmi',
+      columns: 42,
+      feed: 3,
+      codepage: 'cp850',
+      fonts: [
+        {
+          name: 'Font A',
+          columns: 42,
+        },
+        {
+          name: 'Font B',
+          columns: 56,
+        },
+      ],
+      codepages: {
+        cp850: '\x1Bt\x02',
       },
     },
     bematech: {

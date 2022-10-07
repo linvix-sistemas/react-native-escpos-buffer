@@ -2,6 +2,7 @@ import { Profile } from './profile';
 import capabilities, { Capability, SupportedModel } from './capabilities';
 import Bematech from './profile/Bematech';
 import Epson from './profile/Epson';
+import Sunmi from './profile/Sunmi';
 import ControliD from './profile/ControliD';
 import Daruma from './profile/Daruma';
 import Dataregis from './profile/Dataregis';
@@ -28,6 +29,8 @@ export default class Model {
     switch (capability.profile) {
       case 'bematech':
         return new Bematech(capability);
+      case 'sunmi':
+        return new Sunmi(capability);
       case 'controlid':
         return new ControliD(capability);
       case 'daruma':

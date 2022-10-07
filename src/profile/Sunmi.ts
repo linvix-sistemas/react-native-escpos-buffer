@@ -33,24 +33,11 @@ export default class Sunmi extends Profile {
   }
 
   async drawer(
-    number: Drawer,
-    on_time: number,
-    off_time: number,
+    _: Drawer,
+    __: number,
+    ___: number,
   ): Promise<void> {
-    const index = {
-      [Drawer.First]: 0,
-      [Drawer.Second]: 1,
-    };
-    const on_time_char = String.fromCharCode(
-      Math.min(Math.trunc(on_time / 2), 255),
-    );
-    const off_time_char = String.fromCharCode(
-      Math.min(Math.trunc(off_time / 2), 255),
-    );
-    const index_char = String.fromCharCode(index[number]);
-    return this.connection.write(
-      Buffer.from('\x1Bp' + index_char + on_time_char + off_time_char, 'ascii'),
-    );
+    return this.connection.write(Buffer.from('\x10\x14\x00\x00\x00', 'ascii'));
   }
 
   async setAlignment(align: Align) {

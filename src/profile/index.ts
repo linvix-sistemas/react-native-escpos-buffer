@@ -187,7 +187,9 @@ export abstract class Profile {
     return this.connection.write(Buffer.from(this._codepage.command, 'ascii'));
   }
 
-  protected async fontChanged(_: Font, __: Font) { }
+  protected async fontChanged(_: Font, __: Font) {
+    //
+  }
 
   async initialize(): Promise<void> {
     await this.setCodepage(this.capabilities.codepage);

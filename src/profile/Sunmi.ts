@@ -23,7 +23,7 @@ export default class Sunmi extends Profile {
   async cutter(_: Cut): Promise<void> {
     // line feed
     this.connection.write(Buffer.from('\x0a', 'ascii'));
-    // return this.connection.write(Buffer.from('\x1d\x56\x41\x00', 'ascii'));
+    // return this.connection.write(Buffer.from('\x1d\x56\x00', 'ascii'));
     return this.connection.write(Buffer.from('\x1d\x56\x42\x00', 'ascii'));
   }
 
@@ -54,34 +54,15 @@ export default class Sunmi extends Profile {
 
   async setAlignment(align: Align) {
     const cmd = {
-      [Align.Left]: '\x1Ba0',
-      [Align.Center]: '\x1Ba1',
-      [Align.Right]: '\x1Ba2',
+      [Align.Left]: '\x1B\x61\x00',
+      [Align.Center]: '\x1B\x61\x01',
+      [Align.Right]: '\x1B\x61\x02',
     };
     return this.connection.write(Buffer.from(cmd[align], 'ascii'));
   }
 
   protected async setMode(mode: number, enable: boolean): Promise<void> {
-    let byte = 0b00000000; // keep Font A selected
-    if (this.font.name == 'Font B') {
-      byte |= 0b00000001; // keep Font B selected
-    }
-    const before = byte;
-    if (Style.DoubleHeight & mode) {
-      byte |= 0b00010000;
-    }
-    if (Style.DoubleWidth & mode) {
-      byte |= 0b00100000;
-    }
-    let mask = 0b00000001;
-    if (enable) {
-      mask = 0b00110001;
-    }
-    if (before != byte) {
-      return this.connection.write(
-        Buffer.from('\x1B!' + String.fromCharCode(byte & mask), 'ascii'),
-      );
-    }
+    //
   }
 
   protected async setStyle(style: Style, enable: boolean): Promise<void> {

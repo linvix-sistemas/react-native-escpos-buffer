@@ -115,6 +115,7 @@ export default class Sunmi extends Profile {
     const len = data.length + 3;
     const pL = String.fromCharCode(len & 0xff);
     const pH = String.fromCharCode((len >> 8) & 0xff);
+
     await this.connection.write(
       Buffer.from('\x1D(k\x04\x001A' + tipo + '\x00', 'ascii'),
     );
@@ -128,7 +129,10 @@ export default class Sunmi extends Profile {
       Buffer.from('\x1D(k' + pL + pH + '1P0', 'ascii'),
     );
     await this.connection.write(Buffer.from(data, 'ascii'));
-    return this.connection.write(Buffer.from('\x1D(k\x03\x001Q0', 'ascii'));
+    await this.connection.write(Buffer.from('\x1D(k\x03\x001Q0', 'ascii'));
+
+    // line feed
+    return this.connection.write(Buffer.from('\x0A'));
   }
 
   protected async fontChanged(current: Font, previows: Font) {

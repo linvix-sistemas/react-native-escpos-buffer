@@ -75,25 +75,19 @@ export default class Sunmi extends Profile {
   protected async setStyle(style: Style, enable: boolean): Promise<void> {
     if (enable) {
       // enable styles
-      if (Style.Condensed == style) {
-        return this.connection.write(Buffer.from('\x1B\x0f', 'ascii'));
-      } else if (Style.Bold == style) {
-        return this.connection.write(Buffer.from('\x1BE1', 'ascii'));
-      } else if (Style.Italic == style) {
-        return this.connection.write(Buffer.from('\x1B4', 'ascii'));
-      } else if (Style.Underline == style) {
+      if (Style.Underline == style) {
         return this.connection.write(Buffer.from('\x1B-1', 'ascii'));
+      }
+      if (Style.Bold == style) {
+        return this.connection.write(Buffer.from('\x1BE1', 'ascii'));
       }
     } else {
       // disable styles
       if (Style.Underline == style) {
         return this.connection.write(Buffer.from('\x1B-0', 'ascii'));
-      } else if (Style.Italic == style) {
-        return this.connection.write(Buffer.from('\x1B5', 'ascii'));
-      } else if (Style.Bold == style) {
+      }
+      if (Style.Bold == style) {
         return this.connection.write(Buffer.from('\x1BE0', 'ascii'));
-      } else if (Style.Condensed == style) {
-        return this.connection.write(Buffer.from('\x12', 'ascii'));
       }
     }
   }

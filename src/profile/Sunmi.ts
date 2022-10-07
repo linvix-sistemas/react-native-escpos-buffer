@@ -22,7 +22,8 @@ export default class Sunmi extends Profile {
 
   async cutter(_: Cut): Promise<void> {
     // line feed
-    this.connection.write(Buffer.from('\x0a', 'ascii'));
+    // this.connection.write(Buffer.from('\x0a', 'ascii'));
+    this.connection.write(Buffer.from('\x1b\x4a\x05', 'ascii'));
     // return this.connection.write(Buffer.from('\x1d\x56\x00', 'ascii'));
     return this.connection.write(Buffer.from('\x1d\x56\x42\x00', 'ascii'));
   }

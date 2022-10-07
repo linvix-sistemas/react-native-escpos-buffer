@@ -50,7 +50,7 @@ const capabilities = {
 
     // Sunmi
     {
-      model: 'Sunmi-Generic',
+      model: 'Sunmi-T2s',
       profile: 'sunmi',
     },
 

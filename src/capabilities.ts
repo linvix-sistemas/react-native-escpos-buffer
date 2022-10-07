@@ -278,7 +278,7 @@ const capabilities = {
     sunmi: {
       brand: 'Sunmi',
       columns: 48,
-      feed: 3,
+      feed: 0,
       codepage: 'utf8',
       fonts: [
         {

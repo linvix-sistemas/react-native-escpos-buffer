@@ -277,21 +277,22 @@ const capabilities = {
     },
     sunmi: {
       brand: 'Sunmi',
-      columns: 42,
+      columns: 48,
       feed: 3,
-      codepage: 'cp850',
+      codepage: 'utf8',
       fonts: [
         {
           name: 'Font A',
-          columns: 42,
+          columns: 48,
         },
         {
           name: 'Font B',
           columns: 56,
         },
       ],
+      initialize: '\x1B\x40',
       codepages: {
-        cp850: '\x1Bt\x02',
+        utf8: '\x1c\x43\xFF',
       },
     },
     bematech: {

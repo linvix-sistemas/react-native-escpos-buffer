@@ -284,11 +284,7 @@ const capabilities = {
         {
           name: 'Font A',
           columns: 48,
-        },
-        {
-          name: 'Font B',
-          columns: 56,
-        },
+        }
       ],
       initialize: '\x1B\x40',
       codepages: {

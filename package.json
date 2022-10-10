@@ -1,6 +1,6 @@
 {
   "name": "@linvix-sistemas/react-native-escpos-buffer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Library to generate buffer for thermal printers.",
   "author": "Cristiano Cruz <cristiano@linvix.com.br> (https://github.com/cristiano-linvix)",
   "license": "MIT",

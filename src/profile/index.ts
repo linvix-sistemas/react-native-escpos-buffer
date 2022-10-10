@@ -121,7 +121,7 @@ export abstract class Profile {
     return '\x1B*!';
   }
 
-  protected async drawQrcode(data: string, size: number): Promise<void> {
+  protected async drawQrcode(_: string, __: number): Promise<void> {
     // const buffer = await QRCode.toBuffer(data, { scale: size });
     // const image = new Image(buffer, new Threshold());
     // return this.draw(image);

@@ -23,8 +23,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect-brk=9229 node_modules/.bin/jest -i",
-    "prepublish": "yarn prepare && yarn install",
-    "publish": "yarn npm publish --access public"
+    "release": "yarn build && release-it && yarn publish"
   },
   "dependencies": {
     "buffer": "^6.0.3",
@@ -37,6 +36,7 @@
     "@types/w3c-web-usb": "1.0.4",
     "jest": "~24.9.0",
     "prettier": "~1.19.0",
+    "release-it": "^15.5.0",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
     "tslint": "~5.20.1",

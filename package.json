@@ -16,7 +16,7 @@
   "module": "dist/index",
   "files": [
     "src",
-    "lib",
+    "dist",
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__"

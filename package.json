@@ -12,7 +12,8 @@
   "bugs": {
     "url": "https://github.com/linvix-sistemas/react-native-escpos-buffer/issues"
   },
-  "main": "dist/index.js",
+  "main": "dist/index",
+  "module": "dist/index",
   "scripts": {
     "clean": "rimraf coverage dist tmp",
     "build": "tsc -d -p tsconfig.release.json",

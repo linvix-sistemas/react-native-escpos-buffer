@@ -14,6 +14,13 @@
   },
   "main": "dist/index",
   "module": "dist/index",
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
   "scripts": {
     "clean": "rimraf coverage dist tmp",
     "build": "tsc -d -p tsconfig.release.json",

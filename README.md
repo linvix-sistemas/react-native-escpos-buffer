@@ -23,7 +23,6 @@ npm install @linvix-sistemas/react-native-escpos-buffer
 ## Usage
 
 ```js
-// Following setup above...
 const model = new Model('MP-4200 TH');
 const connection = new InMemory();
 const printer = await Printer.CONNECT(model, connection);

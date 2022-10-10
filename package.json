@@ -48,5 +48,17 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": false
+    },
+    "github": {
+      "release": true
+    }
   }
 }

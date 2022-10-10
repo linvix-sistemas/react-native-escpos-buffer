@@ -1,5 +1,5 @@
 import { Connection } from '.';
-export { Buffer } from 'buffer';
+import { Buffer as Buff } from 'buffer';
 
 export default class InMemory implements Connection {
   list: Buffer[];
@@ -15,6 +15,6 @@ export default class InMemory implements Connection {
   async close(): Promise<void> { }
 
   buffer() {
-    return Buffer.concat(this.list);
+    return Buff.concat(this.list);
   }
 }

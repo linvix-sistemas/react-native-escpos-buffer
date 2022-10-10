@@ -32,11 +32,7 @@ export default class Sunmi extends Profile {
     return this.connection.write(Buffer.from('\x07', 'ascii'));
   }
 
-  async drawer(
-    _: Drawer,
-    __: number,
-    ___: number,
-  ): Promise<void> {
+  async drawer(_: Drawer, __: number, ___: number): Promise<void> {
     return this.connection.write(Buffer.from('\x10\x14\x00\x00\x00', 'ascii'));
   }
 

@@ -12,7 +12,7 @@ export default class InMemory implements Connection {
     this.list.push(data);
   }
 
-  async close(): Promise<void> { }
+  async close(): Promise<void> {}
 
   buffer() {
     return Buffer.concat(this.list);

@@ -6,6 +6,8 @@
 
 Library to generate buffer for thermal printers.
 
+Inspired by the package [@grandchef/escpos-buffer][inspired-escpos-buffer]
+
 ## Install
 
 Run command bellow on your project folder
@@ -77,3 +79,4 @@ Licensed under the MIT. See the [LICENSE](https://github.com/linvix-sistemas/rea
 [license]: https://github.com/linvix-sistemas/react-native-escpos-buffer/blob/master/LICENSE
 [version-badge]: https://img.shields.io/npm/v/@linvix-sistemas/react-native-escpos-buffer?label=@linvix-sistemas/react-native-escpos-buffer
 [npm-link]: https://www.npmjs.com/package/@linvix-sistemas/react-native-escpos-buffer
+[inspired-escpos-buffer]: https://github.com/grandchef/escpos-buffer

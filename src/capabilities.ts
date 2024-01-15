@@ -301,7 +301,7 @@ const capabilities = {
         utf8: '\x1c\x43\xFF',
       },
     },
-    rpprint: {
+    rpprinter: {
       brand: 'RP Print',
       columns: 48,
       feed: 3,

@@ -301,6 +301,22 @@ const capabilities = {
         utf8: '\x1c\x43\xFF',
       },
     },
+    rpprint: {
+      brand: 'RP Print',
+      columns: 48,
+      feed: 3,
+      codepage: 'utf8',
+      fonts: [
+        {
+          name: 'Font A',
+          columns: 48,
+        },
+      ],
+      initialize: '\x1B\x40',
+      codepages: {
+        utf8: '\x1c\x43\xFF',
+      },
+    },
     bematech: {
       brand: 'Bematech',
       columns: 50,

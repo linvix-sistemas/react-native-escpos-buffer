@@ -54,6 +54,16 @@ const capabilities = {
       profile: 'sunmi',
     },
 
+    // RP Printer
+    {
+      model: 'YY0808',
+      profile: 'rpprinter',
+    },
+    {
+      model: 'RP80-PLUS',
+      profile: 'rpprinter',
+    },
+
     // Epson
     {
       model: 'TM-T20',

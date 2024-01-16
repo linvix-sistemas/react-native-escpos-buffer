@@ -1,7 +1,6 @@
 import { Buffer } from 'buffer';
 import { Align, Style, Cut, Drawer } from '../actions';
 import { Profile } from '.';
-import { Font } from '../capabilities';
 
 export default class RPPrinter extends Profile {
   async feed(lines: number): Promise<void> {
@@ -21,11 +20,7 @@ export default class RPPrinter extends Profile {
   }
 
   async cutter(_: Cut): Promise<void> {
-    // line feed
-    // this.connection.write(Buffer.from('\x0a', 'ascii'));
-    this.connection.write(Buffer.from('\x1b\x4a\x05', 'ascii'));
-    // return this.connection.write(Buffer.from('\x1d\x56\x00', 'ascii'));
-    return this.connection.write(Buffer.from('\x1d\x56\x42\x00', 'ascii'));
+    return this.connection.write(Buffer.from('\x1Bm', 'ascii'));
   }
 
   async buzzer(): Promise<void> {
@@ -77,6 +72,9 @@ export default class RPPrinter extends Profile {
       if (Style.Bold == style) {
         return this.connection.write(Buffer.from('\x1BE1', 'ascii'));
       }
+      if (Style.Italic == style) {
+        return this.connection.write(Buffer.from('\x1B4', 'ascii'));
+      }
     } else {
       // disable styles
       if (Style.Underline == style) {
@@ -84,6 +82,9 @@ export default class RPPrinter extends Profile {
       }
       if (Style.Bold == style) {
         return this.connection.write(Buffer.from('\x1BE0', 'ascii'));
+      }
+      if (Style.Italic == style) {
+        return this.connection.write(Buffer.from('\x1B5', 'ascii'));
       }
     }
   }
@@ -129,15 +130,5 @@ export default class RPPrinter extends Profile {
 
     // line feed
     return this.connection.write(Buffer.from('\x0A'));
-  }
-
-  protected async fontChanged(current: Font, previows: Font) {
-    if (current.name == 'Font A') {
-      await this.connection.write(Buffer.from('\x1BM\x00', 'ascii'));
-    } else {
-      // Font B
-      await this.connection.write(Buffer.from('\x1BM\x01', 'ascii'));
-    }
-    return super.fontChanged(current, previows);
   }
 }

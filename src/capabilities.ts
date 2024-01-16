@@ -302,7 +302,7 @@ const capabilities = {
       },
     },
     rpprinter: {
-      brand: 'RP Print',
+      brand: 'RP Printer',
       columns: 48,
       feed: 3,
       codepage: 'utf8',

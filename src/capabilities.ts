@@ -53,6 +53,17 @@ const capabilities = {
       model: 'Sunmi-T2s',
       profile: 'sunmi',
     },
+    {
+      model: 'Sunmi-D2-Mini',
+      profile: 'sunmi',
+      columns: 32,
+      fonts: [
+        {
+          name: 'Font A',
+          columns: 32,
+        },
+      ],
+    },
 
     // RP Printer
     {

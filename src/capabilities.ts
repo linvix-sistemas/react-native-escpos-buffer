@@ -57,6 +57,7 @@ const capabilities = {
       model: 'Sunmi-D2-Mini',
       profile: 'sunmi',
       columns: 32,
+      feed: 3,
       fonts: [
         {
           name: 'Font A',
